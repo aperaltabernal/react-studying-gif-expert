@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
 export const AddCategory = ({onNewCategory}) => {
     const [inputValue, setInputValue] = useState('');
@@ -8,8 +9,9 @@ export const AddCategory = ({onNewCategory}) => {
     }
 
     const onSubmit = (event) => {
+        console.log("onSubmit ejecutado");
         event.preventDefault();//Evita que la página se refresque por ejecutar el onSubmit del form
-        
+        console.log("inputValue: " + inputValue)
         if(inputValue.trim().length <= 1) return;
 
         //El componenten sólo debe encargarse de emitir el valor, no validar nada mas
@@ -18,7 +20,7 @@ export const AddCategory = ({onNewCategory}) => {
     }
 
     return (
-        <form onSubmit={onSubmit}>{/* Al presionar enter, el elemento form recarga toda la pagina */}
+        <form onSubmit={onSubmit} aria-label="form">{/* Al presionar enter, el elemento form recarga toda la pagina */}
             <input
                 type="text"
                 placeholder="Buscar gifs"
@@ -27,4 +29,8 @@ export const AddCategory = ({onNewCategory}) => {
             />
         </form>
     );
+}
+
+AddCategory.propTypes = {
+    onNewCategory: PropTypes.func.isRequired
 }
