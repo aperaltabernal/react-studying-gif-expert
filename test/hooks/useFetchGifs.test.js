@@ -16,6 +16,9 @@ describe('Pruebas en el hook useFetchGifs', () => {
         const {result} = renderHook(() => useFetchGifs('Punch'));
         const { images, isLoading} = result.current;
 
+        //ESTA FUNCION ESPERA A QUE EL HOOK SE EJECUTE
+        //Y LA MANERA DE SABER SI YA SE EJECUTO ES QUE EL EXPECT INTERNO
+        //SE CUMPLA
         await waitFor(() => {
             expect(result.current.images.length).toBeGreaterThan(0)
         });
