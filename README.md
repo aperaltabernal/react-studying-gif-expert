@@ -64,3 +64,10 @@ module.exports= {
 	...,
 	setupFiles: ['./jest.setup.js']
 }
+
+# Finalmente, en el script del package.json agregar el "test":
+
+"scripts": {
+    ...
+    "test": "jest --watchAll"
+  },
