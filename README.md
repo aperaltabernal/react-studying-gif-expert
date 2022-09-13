@@ -13,7 +13,7 @@ npm install --save-dev jest
 npm install --save-dev @types/jest
 
 
-# Opcional: Al importar un archivo js en un set de pruebas de la manera 'import { function } from './path'; la prueba arroja un error como el siguiente:
+# Al importar un archivo js en un set de pruebas de la manera 'import { function } from './path'; la prueba arroja un error como el siguiente:
 Jest encountered an unexpected token
 Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.        
 Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
@@ -51,7 +51,7 @@ module.exports = {
     testEnvironment: 'jest-environment-jsdom'
 }
 
-# Para probar operaciones que llaman fetch API instalar ls siguiente dependencia en dev:
+# Opcional: Para probar operaciones que llaman fetch API instalar ls siguiente dependencia en dev:
 npm install --save-dev whatwg-fetch
 
 # Luego crear el archivo jest.setup.js y colocar lo siguiente:
